@@ -22,29 +22,37 @@
 
 arr=[1,2,3,4,5,6,7]
 length=len(arr)
-k=3
+k=15
 
 
 if k<=len(arr):
-    new_arr=arr[-k:]
-    print(arr[:-k])
+    # new_arr=arr[-k:] --- old
+    new_arr=arr[:-k]
+    count=0
+    for i in range(len(arr[-k:])):
+        count+=1
+        arr[i]=arr[-k+i]
 
-    for i in range(len(arr[:-k])):
-        new_arr.append(arr[i])
+    for i in range(len(new_arr)):
+        arr[count]=new_arr[i]
+        count+=1
 
-        # arr=new_arr
-
-    # print(new_arr)
 
 else:
     new_k=k%len(arr)
-    # print(arr[:-new_k])
-    new_arr=arr[-new_k:]
+    # new_arr=arr[-new_k:] --- old
+    new_arr=arr[:-new_k]
+    count=0
 
-    for i in range(len(arr[:-new_k])):
-        new_arr.append(arr[i])
+    for i in range(len(arr[-new_k:])):
+        arr[count]=arr[-new_k+i]
+        count+=1
 
+    for i in range(len(new_arr)):
+        arr[count]=new_arr[i]
+        count+=1
 
-print(new_arr)
+print(arr)
+
 
 
