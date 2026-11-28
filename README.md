@@ -4,6 +4,7 @@
 ### 66. Plus one
 ### 189. Rotate array
 ### 208. Missing number
+### 3360 Stone removal game
 
 
 
